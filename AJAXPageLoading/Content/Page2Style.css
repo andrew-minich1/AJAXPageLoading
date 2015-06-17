@@ -1,0 +1,16 @@
+﻿.page2 {
+    text-align: center;
+    margin: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+    table tr:hover {
+        background: #786b59;
+    }
+
+    table td {
+        border-bottom: 1px solid black;
+    }

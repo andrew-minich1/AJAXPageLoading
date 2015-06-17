@@ -1,0 +1,43 @@
+﻿@model IList<AJAXPageLoading.Models.Country>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SecondView</title>
+    <link href="~/Content/Page2Style.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/JavaScript2.js"></script>
+</head>
+<body>
+    <div class="page2">
+        <button id="alert">Alert</button>
+    </div>
+
+    <div class="page2">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Country</th>
+                    <th>Capital</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var country in Model)
+                {
+                    <tr>
+                        <td>@country.Id</td>
+                        <td>@country.Name</td>
+                        <td>@country.Сapital</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Page1Style.css" rel="stylesheet" />
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/JavaScript1.js"></script>
+</head>
+<body>
+    <div class="page1">
+        <a href="/Home/ShowSecondView"><button id="nextButton">Next</button></a>
+    </div>
+    <div class="page1">
+        <button id="dialogButton">Dialog</button>
+    </div>
+    <div id="result" title="Second page" class="page1">
+
+    </div>
+</body>
+</html>
