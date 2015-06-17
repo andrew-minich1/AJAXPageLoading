@@ -1,32 +1,34 @@
 ﻿
 $(function () {
-    var isDelete = false;
+
+    var loadPage = true;
 
     $("#dialogButton").click(function () {
-        $.ajax({
-            type: "GET",
-            url: '/Home/ShowSecondView',
-            cache: false,
-            dataType: "html",
-            success: function (response) {
-                if (isDelete == false) {
+        if (loadPage == true) {
+            $.ajax({
+                type: "GET",
+                url: '/Home/ShowSecondView',
+                cache: false,
+                dataType: "html",
+                success: function (response) {
                     getCSS();
+                    var start = response.indexOf('<body>');
+                    var end = response.indexOf('</body>');
+                    var result = response.substring(start + 6, end);
+                    $("#result").html(result);
+                    $.getScript("/Scripts/JavaScript2.js");
+                    loadPage = false;
                 }
-                var start = response.indexOf('<body>');
-                var end = response.indexOf('</body>');
-                var result = response.substring(start + 6, end);
-                $("#result").html(result);
-                $("#result").dialog("open");
-                $.getScript("/Scripts/JavaScript2.js");
-            }
-        })
+            })
+        }
+        $("#result").dialog("open");
     });
     return false;
 
     function getCSS() {
         $('<link rel="stylesheet" type="text/css" href="' + "/Content/Page2Style.css" + '" >')
        .appendTo("head");
-        isDelete = true;
+        loadCSS = true;
     };
 
 });
